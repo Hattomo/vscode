@@ -43,6 +43,7 @@ export class Resource implements SourceControlResourceState {
 
 	static getStatusText(type: Status) {
 		switch (type) {
+			case Status.STAGED_MODIFIED: return localize('index modified', "Index Modified");
 			case Status.INDEX_MODIFIED: return localize('index modified', "Index Modified");
 			case Status.MODIFIED: return localize('modified', "Modified");
 			case Status.INDEX_ADDED: return localize('index added', "Index Added");
@@ -112,6 +113,7 @@ export class Resource implements SourceControlResourceState {
 
 	private getIconPath(theme: string): Uri {
 		switch (this.type) {
+			case Status.STAGED_MODIFIED: return Resource.Icons[theme].Modified;
 			case Status.INDEX_MODIFIED: return Resource.Icons[theme].Modified;
 			case Status.MODIFIED: return Resource.Icons[theme].Modified;
 			case Status.INDEX_ADDED: return Resource.Icons[theme].Added;
@@ -169,6 +171,7 @@ export class Resource implements SourceControlResourceState {
 
 	get letter(): string {
 		switch (this.type) {
+			case Status.STAGED_MODIFIED:
 			case Status.INDEX_MODIFIED:
 			case Status.MODIFIED:
 				return 'M';
@@ -202,6 +205,8 @@ export class Resource implements SourceControlResourceState {
 
 	get color(): ThemeColor {
 		switch (this.type) {
+			case Status.STAGED_MODIFIED:
+				return new ThemeColor('gitDecoration.stagedModifiedResourceForeground');
 			case Status.INDEX_MODIFIED:
 			case Status.MODIFIED:
 				return new ThemeColor('gitDecoration.modifiedResourceForeground');
@@ -232,6 +237,7 @@ export class Resource implements SourceControlResourceState {
 
 	get priority(): number {
 		switch (this.type) {
+			case Status.STAGED_MODIFIED:
 			case Status.INDEX_MODIFIED:
 			case Status.MODIFIED:
 				return 2;

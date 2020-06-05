@@ -62,6 +62,8 @@ export interface Remote {
 }
 
 export const enum Status {
+	STAGED_MODIFIED,
+
 	INDEX_MODIFIED,
 	INDEX_ADDED,
 	INDEX_DELETED,

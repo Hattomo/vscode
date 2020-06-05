@@ -1739,6 +1739,24 @@
         }
       },
       {
+        "id": "gitDecoration.stagedModifiedResourceForeground",
+        "description": "%colors.stagedModified%",
+        "defaults": {
+          "light": "#FF00FF",
+          "dark": "#FF00FF",
+          "highContrast": "#FF00FF"
+        }
+      },
+      {
+        "id": "gitDecoration.stagedAddedResourceForeground",
+        "description": "%colors.stagedAdded%",
+        "defaults": {
+          "light": "#abab00",
+          "dark": "#abab00",
+          "highContrast": "#abab00"
+        }
+      },
+      {
         "id": "gitDecoration.conflictingResourceForeground",
         "description": "%colors.conflict%",
         "defaults": {

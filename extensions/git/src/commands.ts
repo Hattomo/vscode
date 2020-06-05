@@ -442,6 +442,7 @@ export class CommandCenter {
 			case Status.INDEX_ADDED:
 				return toGitUri(resource.original, 'HEAD');
 
+			// ??
 			case Status.MODIFIED:
 			case Status.UNTRACKED:
 				return toGitUri(resource.resourceUri, '~');
